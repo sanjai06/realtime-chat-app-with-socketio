@@ -1,11 +1,24 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require("express");
+const app = express();
+const socket = require("socket.io");
+const color = require("colors");
+const cors = require("cors");
+const { get_Current_User, user_Disconnect, join_User } = require("./dummyuser");
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use(express());
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+const port = 8000;
+
+app.use(cors());
+
+var server = app.listen(
+  port,
+  console.log(
+    `Server is running on the port no: ${(port)} `
+      .green
+  )
+);
+
+const io = socket(server);
+
+io
