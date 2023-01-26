@@ -1,8 +1,8 @@
-// import Chat from "./chat/chat";
-import Process from "./process/process";
+import Chat from "./component/chat/chat";
+import Process from "./component/process/process";
 import Home from "./component/home/home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import React from "react";
 import io from "socket.io-client";
 

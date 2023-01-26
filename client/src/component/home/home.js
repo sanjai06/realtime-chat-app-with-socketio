@@ -1,9 +1,12 @@
+import "./home.scss";
+import React ,{useState} from 'react';
+import {Link} from  "react-router-dom;"
 
-import React ,{useState} from 'react'
+
 
 function home() {
-    const [username, setusername] = useState(initialState);
-    const [roomname, setroomname] = useState(initialState);
+    const [username, setusername] = useState("");
+    const [roomname, setroomname] = useState("");
 
     const sendData = () => {
         if (username !== "" && roomname !== "") {
